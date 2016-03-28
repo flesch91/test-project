@@ -1,0 +1,32 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "Test task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test",
+    "gnsit",
+    "angularjs",
+    "js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flesch91/test-project.git"
+  },
+  "author": "Nazarii Banakh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flesch91/test-project/issues"
+  },
+  "homepage": "https://github.com/flesch91/test-project#readme",
+
+  "devDependencies": {
+    "amdefine": ">=0.1.0",
+    "bower": "=1.3.12",
+    "gulp": "=3.9.1",
+    "gulp-webserver": "^0.9.1"
+  }
+}
