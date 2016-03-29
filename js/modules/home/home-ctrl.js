@@ -28,7 +28,6 @@ define(['./module'], function(module){
             item = player.draftkings['salary'];
             break;
         }
-        //console.log(item,  Math.round(item) <= minVar);
         return (Math.round(item) <= minVar);
       }
     };
