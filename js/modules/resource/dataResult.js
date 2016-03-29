@@ -9,7 +9,7 @@ define([
 
   return angular.module('app.resources.dataResult', [
     'ngResource'
-  ]).service('DataResults', function($resoutce){
-
-  })
+  ]).service('DataResults', function($resource){
+    return $resource('/data.result-2.json');
+  });
 });

@@ -1,13 +1,68 @@
-<h1>{{name}}</h1>
-<table class="table table-striped">
+<div class="well">
+  <label>PROJ.: {{projFilter}}</label>
+  <input type="range"  min="1" max="200" ng-model="projFilter"/>
+
+
+  <label>Salary.: {{salaryFilter}}</label>
+  <input type="range"  min="1" max="150000" ng-model="salaryFilter"/>
+
+</div>
+<table class="table table-striped list-players">
   <tr>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
+    <th>#</th>
+    <th>Player</th>
+    <th>Pos</th>
+    <th>Team</th>
+    <th>Opp</th>
+    <th>EFF POS</th>
+    <th>MIN</th>
+    <th>UR</th>
+    <th>RR</th>
+    <th>AR</th>
+    <th>MAN EA</th>
+    <th>PROJ.</th>
+    <th>DFS SITE</th>
+    <th>SAL</th>
+    <th>VAL THR</th>
+    <th>VAL</th>
   </tr>
-  <tr>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
+  <tr ng-repeat="(index, player) in players | filter:rangeFilter('proj', projFilter, 1) | filter:rangeFilter('salary', salaryFilter, 1) | limitTo: currentCount">
+    <td>{{player.index}}</td>
+    <td>{{player.player}}</td>
+    <td>{{player.pos['draftkings']}}</td>
+    <td>{{player.team}}</td>
+    <td>{{player.opp}}</td>
+    <td>
+      <select name="#" id="">
+        <option value="#" ng-repeat="effpos in player.effectivePos">
+          {{effpos}}
+        </option>
+      </select>
+    </td>
+
+    <td>
+      <input type="number"  ng-model="player.statsCurrentSeason.minutes['new']" ng-change="getUpdatedItem(player.index)"/>
+    </td>
+    <td>
+      <input type="number" ng-model="player.statsCurrentSeason.usageRate['new']" ng-change="getUpdatedItem(player.index)"/>
+    </td>
+    <td>
+      <input type="number" ng-model="player.statsCurrentSeason.reboundRate['new']" ng-change="getUpdatedItem(player.index)"/>
+    </td>
+    <td>
+      <input type="number" ng-model="player.statsCurrentSeason.assistsRate['new']" ng-change="getUpdatedItem(player.index)"/>
+    </td>
+
+    <td>
+      <input type="number" ng-model="player.manualEffAdj['new']" ng-change="getUpdatedItem(player.index)"/>
+    </td>
+    <td>{{player.proj}}</td>
+    <td>{{player.draftkings['name']}}</td>
+    <td>{{player.draftkings['salary']}}</td>
+    <td>{{player.draftkings['valueThreshold']}}</td>
+    <td>{{player.draftkings.value['old']}}</td>
   </tr>
 </table>
+<div class="text-center">
+  <button class="btn btn-lg btn-info" ng-click="showMore()">Show more</button>
+</div>

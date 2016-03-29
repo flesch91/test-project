@@ -3,11 +3,13 @@
  */
 define([
   'angular',
-  'ui.router'
+  'ui.router',
+  '../resource/dataResult'
 ], function(angular){
   'use strict';
 
   return angular.module('app.home', [
+    'app.resources.dataResult',
     'ui.router'
   ])
     .config(function ($stateProvider){
