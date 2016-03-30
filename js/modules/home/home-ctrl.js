@@ -10,7 +10,7 @@ define(['./module'], function(module){
     $scope.salaryFilter = 150000;
     $scope.players = [];
     $scope.index = 0;
-    $scope.currentCount = 1;
+    $scope.currentCount = 10;
 
     $scope.showMore = function(){
        return $scope.currentCount+=10
